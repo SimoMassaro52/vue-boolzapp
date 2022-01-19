@@ -3,3 +3,137 @@
     padding: 0;
     margin: 0;
 }
+
+h6{
+    margin-bottom: 0 !important;
+}
+
+/* body *{
+    border: 1px solid black;
+} */
+
+/*SIDE NAVBAR*/
+
+nav{
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 450px;
+    box-shadow: 1px 0px 0px 0px #CDCDCD;
+    z-index: 2;
+}
+
+/*USER HEADER*/
+#nav-header{
+    background-color: #EDEDED;
+}
+
+#user-img{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+#h-btns{
+    font-size: 20px;
+    cursor: pointer;
+    color: #51585C
+}
+
+/*SEARCH-BAR*/
+
+#search-box{
+    background-color: #F6F6F6;
+    box-shadow: 0px 1px 0px 0px #CDCDCD;
+    margin-bottom: 1px;
+}
+
+#search-bar{
+    width: 96%;
+    background-color: white;
+}
+
+#search-bar div:first-child{
+    cursor: pointer;
+}
+
+ input{
+    width: 86%;
+    border: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+#search-bar i{
+    color: #51585C;
+}
+
+/*CONTACT-LIST*/
+
+#propic{
+    cursor: pointer;
+}
+
+#contact-img{
+    height: 50px;
+    width: 50px;  
+    object-fit: cover;
+}
+
+#contact h6{
+    font-size: 18px;
+}
+
+#contact span{
+    font-size: 14px;
+}
+
+#contact:hover{
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+#pretext{
+    border-bottom: 1px solid #F5F5F5;
+}
+
+/*MAIN CHAT*/
+
+/*HEADER*/
+
+main{
+    position: absolute;
+    right: 0;
+    width: calc(100vw - 450px);
+    height: 100%;
+}
+
+#chat-header{
+    background-color: #EDEDED;
+    box-shadow: 0px 1px 0px 0px #CDCDCD;
+}
+
+/*MESSAGE BOX*/
+
+#message-box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #EDEDED;
+}
+
+#message-box i{
+    font-size: 22px;
+}
+
+/*CHAT-BOX*/
+
+#chat-box{
+    height: calc(100vh - 112px);
+    background-image: url("img/halo-halo-infinite-wallpaper-preview.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
