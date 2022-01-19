@@ -16,13 +16,13 @@
                 <img id="user-img" class="rounded-circle" src="img/artworks-000509641182-5wxht4-t500x500.jpg">
             </div>
             <div class="d-flex flex-row justify-content-around align-items-center mx-4">  
-                <div id="h-btns" class="mx-2 px-2">    
+                <div class="mx-2 px-2 h-btns">    
                     <i class="fas fa-circle-notch"></i>              
                 </div>    
-                <div id="h-btns" class="mx-2 px-2">
+                <div class="mx-2 px-2 h-btns">
                     <i class="far fa-comment-alt"></i>     
                 </div>           
-                <div id="h-btns" class="mx-2 px-2">
+                <div class="mx-2 px-2 h-btns">
                     <i class="fas fa-ellipsis-v"></i>
                 </div>    
             </div>    
@@ -67,35 +67,48 @@
                 </div>
             </div>
             <div class="d-flex align-items-center mx-3">
-                <div id="h-btns" class="mx-2 px-2">
+                <div class="mx-2 px-2 h-btns">
                     <i  class="fas fa-search"></i>
                 </div>
-                <div id="h-btns" class="mx-2 px-2">
+                <div class="mx-2 px-2 h-btns">
                     <i  class="fas fa-ellipsis-v"></i>
                 </div>
             </div>    
         </header>
 
-        <section id="chat-box"> 
-            
-            
+        <section id="chat-box" class="d-flex flex-column clearfix px-5"> 
+            <!--CNTCT MSG-->
+            <div id="contact-message" class="mt-4 align-self-start">
+                <div class="px-3 py-1 mt-1">
+                    <span>Assumenda, placeat.</span>
+                </div>
+                <div class="px-3 py-1 mt-1">
+                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur labore error repudiandae, distinctio pariatur nihil ex, blanditiis sunt debitis quam id ipsum inventore ea magnam corporis impedit rerum? Assumenda, placeat.</span>
+                </div>
+            </div>
+            <!--USR MSG-->
+            <div id="user-message" class="align-self-end">
+                <div class="px-3 py-1 mt-1">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor soluta iure vel error voluptatum tempore distinctio mollitia expedita quia fugiat incidunt quasi commodi cum eveniet delectus, eius doloremque labore minus.</span>
+                </div>
+            </div>
         </section>
 
         <section id="message-box">
             <div class="d-flex flex-row align-items-center">
-                <div class="mx-2 d-flex flex-row align-items-center">
-                    <div id="h-btns" class="mx-1 px-1">
+                <div class="mx-3 d-flex flex-row align-items-center">
+                    <div class="mx-1 px-1 h-btns">
                         <i class="fas fa-smile"></i>
                     </div>
-                    <div id="h-btns" class="mx-1 px-1">
+                    <div class="mx-1 px-1 h-btns">
                         <i class="fas fa-paperclip"></i>
                     </div>
                 </div>    
                 <div id="message-input" class="rounded-pill my-2 px-3 bg-white w-100">
                     <input type="text" class="my-1 py-1 px-1 w-100" placeholder="Scrivi un messaggio" name="" id="">
                 </div>
-                <div id="h-btns" class="mx-3 px-1">
-                    <i class="fas fa-microphone"></i>
+                <div class="mx-3 px-1 h-btns">
+                    <i id="send" class="fas fa-paper-plane"></i>
                 </div>
             </div>
         </section>
