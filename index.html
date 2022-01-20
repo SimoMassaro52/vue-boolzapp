@@ -75,17 +75,15 @@
 
             <!--Sezione chat-->
             <section id="chat-box" class="d-flex flex-column pt-3 px-5"> 
-                <!--CONTACT MSG-->
                 <!--Peschiamo l'array dei messaggi-->
-                <div id="contact-message" v-for="(element, index, array) in contacts[currentConvo].messages" class="align-self-start">
-                    <div class="px-2 py-1 mt-1">
-                        <!--Stampiamo il testo dell'elemento-->
-                        <span>{{element.text}}</span>
-                    </div>
+                <!--CONTACT MSG-->
+                <div v-for="(element, index, array) in contacts[currentConvo].messages" class="px-2 py-1 mt-1 contact-message align-self-start">
+                    <!--Stampiamo il testo dell'elemento-->
+                    <span>{{element.text}}</span>
                 </div>
                 <!--USER MSG-->
                 <!--V-for che cicla l'array di oggetti vuoto da far riempire all'utente-->
-                <div id="user-message" v-for="(element, index, array) in userArr" class="align-self-end mt-1 text-right"> 
+                <div v-for="(element, index, array) in userArr" class="mt-1 user-message align-self-end "> 
                     <!--V-if per non visualizzare la grafica di un messaggio vuoto + testo di input dell'utente-->           
                     <span v-if="element.text != ''" class="d-flex flex-wrap px-2 py-1">{{element.text}}</span>
                 </div>

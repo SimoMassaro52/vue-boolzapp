@@ -39,13 +39,16 @@ let app = new Vue({
                 avatar: 'img/arbiter.jpg',
                 messages:[
                     {
-                        text: 'wart wart wart'
+                        text: 'wart wart wart',
+                        status: 'recieved'
                     },
                     {
-                        text: 'Demon! How many have died by your hand?'
+                        text: 'Demon! How many have died by your hand?',
+                        status: 'recieved'
                     },
                     {
-                        text: 'We have to start accounting for your casualties on our paybooks, stop dodging our calls to court!'
+                        text: 'We have to start accounting for your casualties on our paybooks, stop dodging our calls to court!',
+                        status: 'recieved'
                     }
                 ]
             },
@@ -54,7 +57,8 @@ let app = new Vue({
                 avatar: 'img/rob.jpg',
                 messages:[
                     {
-                        text: 'Bro stop texting my girlfriend or I will beat you'
+                        text: 'Bro stop texting my girlfriend or I will beat you',
+                        status: 'recieved'
                     }
                 ]
             },
@@ -63,10 +67,12 @@ let app = new Vue({
                 avatar: 'img/samus.jpg',
                 messages: [
                     {
-                        text: 'Why do you keep harrassing me on Insta??'
+                        text: 'Why do you keep harrassing me on Insta??',
+                        status: 'recieved'
                     },
                     {
-                        text: 'You are kind of hot but It could never work between us'
+                        text: 'You are kind of hot but It could never work between us',
+                        status: 'recieved'
                     }
                 ]
             },
@@ -75,13 +81,16 @@ let app = new Vue({
                 avatar: 'img/cortana.png',
                 messages:[
                     {
-                        text: 'Hey big boy '
+                        text: 'Hey big boy ',
+                        status: 'recieved'
                     },
                     {
-                        text:'If you cannot show up to our appointments, you could at least let me know'
+                        text:'If you cannot show up to our appointments, you could at least let me know',
+                        status: 'recieved'
                     },
                     {
-                        text: 'Dont make a girl a promise, if you know you cant keep it'
+                        text: 'Dont make a girl a promise, if you know you cant keep it',
+                        status: 'recieved'
                     }
                 ]
             }
@@ -94,7 +103,8 @@ let app = new Vue({
         sendMsg: function(){
             this.userArr.push(
                 {
-                    text: this.userMsg
+                    text: this.userMsg,
+                    status: 'sent'
                 }
             )
             this.userMsg='';    

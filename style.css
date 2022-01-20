@@ -140,26 +140,23 @@ main{
 
 /*CONTACT MESSAGE*/
 
-#contact-message{
+.contact-message{
     width: fit-content;
     max-width: 80%;
-}
-
-#contact-message > div{
     background-color: white;
     border-radius: 10px;    
     width: fit-content;
 }
 
+
+
 /*USER MESSAGE*/
 
-#user-message{
+.user-message{
     width: fit-content;
-    max-width: 80% !important;
-}
-
-#user-message {
+    max-width: 80%;
     background-color: #DCF8C6;
     border-radius: 10px;
     width: fit-content;
 }
+
