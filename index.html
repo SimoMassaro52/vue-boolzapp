@@ -78,19 +78,19 @@
                 <!--CONTACT MSG-->
                 <!--Peschiamo l'array dei messaggi-->
                 <div id="contact-message" v-for="(element, index, array) in contacts[currentConvo].messages" class="align-self-start">
-                    <div class="px-3 py-1 mt-1">
+                    <div class="px-2 py-1 mt-1">
                         <!--Stampiamo il testo dell'elemento-->
                         <span>{{element.text}}</span>
                     </div>
                 </div>
                 <!--USER MSG-->
-                <div id="user-message" class="align-self-end">
-                    <div class="px-3 py-1 mt-1">
-                        <span>Magister arte decochlearia</span>
-                    </div>
+                <!--V-for che cicla l'array di oggetti vuoto da far riempire all'utente-->
+                <div id="user-message" v-for="(element, index, array) in userArr" class="align-self-end mt-1 text-right"> 
+                    <!--V-if per non visualizzare la grafica di un messaggio vuoto + testo di input dell'utente-->           
+                    <span v-if="element.text != ''" class="d-flex flex-wrap px-2 py-1">{{element.text}}</span>
                 </div>
             </section>
-
+            <!--Sezione d'invio messaggio-->
             <section id="message-box">
                 <div class="d-flex flex-row align-items-center">
                     <div class="mx-3 d-flex flex-row align-items-center">
@@ -100,9 +100,10 @@
                         <div class="mx-1 px-1 h-btns">
                             <i class="fas fa-paperclip"></i>
                         </div>
-                    </div>    
+                    </div>      
                     <div id="message-input" class="rounded-pill my-2 px-3 bg-white w-100">
-                        <input type="text" class="my-1 py-1 px-1 w-100" placeholder="Scrivi un messaggio" name="" id="">
+                    <!--Input messaggio utente-->
+                        <input @keyup.enter="sendMsg()" v-model="userMsg" type="text" class="my-1 py-1 px-1 w-100" placeholder="Scrivi un messaggio" name="" id="">
                     </div>
                     <div class="mx-3 px-1 h-btns">
                         <i id="send" class="fas fa-paper-plane"></i>

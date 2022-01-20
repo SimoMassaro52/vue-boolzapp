@@ -155,10 +155,10 @@ main{
 
 #user-message{
     width: fit-content;
-    max-width: 80%;
+    max-width: 80% !important;
 }
 
-#user-message > div{
+#user-message {
     background-color: #DCF8C6;
     border-radius: 10px;
     width: fit-content;
