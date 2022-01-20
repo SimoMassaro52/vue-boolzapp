@@ -140,7 +140,7 @@ main{
 
 /*CONTACT MESSAGE*/
 
-.contact-message{
+.recieved{
     width: fit-content;
     max-width: 80%;
     background-color: white;
@@ -152,11 +152,13 @@ main{
 
 /*USER MESSAGE*/
 
-.user-message{
+.sent{
     width: fit-content;
     max-width: 80%;
     background-color: #DCF8C6;
     border-radius: 10px;
-    width: fit-content;
+    word-break: break-word;
+    padding: 4px 5px;
+    align-self: flex-end;
 }
 

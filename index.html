@@ -75,18 +75,17 @@
 
             <!--Sezione chat-->
             <section id="chat-box" class="d-flex flex-column pt-3 px-5"> 
-                <!--Peschiamo l'array dei messaggi-->
+            
                 <!--CONTACT MSG-->
-                <div v-for="(element, index, array) in contacts[currentConvo].messages" class="px-2 py-1 mt-1 contact-message align-self-start">
+                <div v-for="(element, index, array) in contacts[currentConvo].messages" :class=`${element.status}` class="px-2 py-1 mt-1 contact-message">
                     <!--Stampiamo il testo dell'elemento-->
                     <span>{{element.text}}</span>
                 </div>
+                
                 <!--USER MSG-->
-                <!--V-for che cicla l'array di oggetti vuoto da far riempire all'utente-->
-                <div v-for="(element, index, array) in userArr" class="mt-1 user-message align-self-end "> 
-                    <!--V-if per non visualizzare la grafica di un messaggio vuoto + testo di input dell'utente-->           
+                <!-- <div v-for="(element, index, array) in contacts[currentConvo].messages" class="mt-1 user-message align-self-end "> 
                     <span v-if="element.text != ''" class="d-flex flex-wrap px-2 py-1">{{element.text}}</span>
-                </div>
+                </div> -->
             </section>
             <!--Sezione d'invio messaggio-->
             <section id="message-box">
@@ -101,10 +100,10 @@
                     </div>      
                     <div id="message-input" class="rounded-pill my-2 px-3 bg-white w-100">
                     <!--Input messaggio utente-->
-                        <input @keyup.enter="sendMsg()" v-model="userMsg" type="text" class="my-1 py-1 px-1 w-100" placeholder="Scrivi un messaggio" name="" id="">
+                        <input @keyup.enter="sendMsg(currentConvo)" v-model="userMsg" type="text" class="my-1 py-1 px-1 w-100" placeholder="Scrivi un messaggio" name="" id="">
                     </div>
                     <div class="mx-3 px-1 h-btns">
-                        <i id="send" class="fas fa-paper-plane"></i>
+                        <i @click="sendMsg(currentConvo)" id="send" class="fas fa-paper-plane"></i>
                     </div>
                 </div>
             </section>

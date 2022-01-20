@@ -26,13 +26,8 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 let app = new Vue({
     el: '#app',
     data:{
-        userMsg:'',
+        userMsg: '',
         currentConvo: 0,
-        userArr:[
-            {
-                text:''
-            }
-        ],
         contacts:[
             {
                 name: 'Arbiter',
@@ -100,14 +95,24 @@ let app = new Vue({
         showConvo: function(index){
             this.currentConvo = index;
         },
-        sendMsg: function(){
-            this.userArr.push(
-                {
-                    text: this.userMsg,
-                    status: 'sent'
-                }
-            )
-            this.userMsg='';    
+        sendMsg: function(currentConvo){
+            if(this.userMsg != ''){
+                this.contacts[currentConvo].messages.push(
+                    {
+                        text: this.userMsg,
+                        status: 'sent'
+                    }
+                )
+            }
+            this.userMsg='';
+            setTimeout(()=> {
+                this.contacts[currentConvo].messages.push(
+                    {
+                        text: 'ok',
+                        status: 'recieved'
+                    }
+                )
+            }, 1000);    
         }
     }
 })
