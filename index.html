@@ -51,6 +51,7 @@
             </section>
         </nav>
         <main id="chat">
+            <!--Sezione dati contatto-->
             <header id="chat-header" class="d-flex flex-row justify-content-between py-2">
                 <div class="d-flex flex-row align-items-center">
                     <div class="mx-3">
@@ -72,17 +73,17 @@
                 </div>    
             </header>
 
-            <section id="chat-box" class="d-flex flex-column clearfix px-5"> 
-                <!--CNTCT MSG-->
-                <div id="contact-message" class="mt-4 align-self-start">
+            <!--Sezione chat-->
+            <section id="chat-box" class="d-flex flex-column pt-3 px-5"> 
+                <!--CONTACT MSG-->
+                <!--Peschiamo l'array dei messaggi-->
+                <div id="contact-message" v-for="(element, index, array) in contacts[currentConvo].messages" class="align-self-start">
                     <div class="px-3 py-1 mt-1">
-                        <span>Assumenda, placeat.</span>
-                    </div>
-                    <div class="px-3 py-1 mt-1">
-                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur labore error repudiandae, distinctio pariatur nihil ex, blanditiis sunt debitis quam id ipsum inventore ea magnam corporis impedit rerum? Assumenda, placeat.</span>
+                        <!--Stampiamo il testo dell'elemento-->
+                        <span>{{element.text}}</span>
                     </div>
                 </div>
-                <!--USR MSG-->
+                <!--USER MSG-->
                 <div id="user-message" class="align-self-end">
                     <div class="px-3 py-1 mt-1">
                         <span>Magister arte decochlearia</span>
