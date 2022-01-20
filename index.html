@@ -10,109 +10,105 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    <nav id="contacts" class="d-flex flex-column">
-        <header id="nav-header" class="d-flex flex-row py-2 justify-content-between">
-            <div class="mx-3">
-                <img id="user-img" class="rounded-circle" src="img/artworks-000509641182-5wxht4-t500x500.jpg">
-            </div>
-            <div class="d-flex flex-row justify-content-around align-items-center mx-4">  
-                <div class="mx-2 px-2 h-btns">    
-                    <i class="fas fa-circle-notch"></i>              
-                </div>    
-                <div class="mx-2 px-2 h-btns">
-                    <i class="far fa-comment-alt"></i>     
-                </div>           
-                <div class="mx-2 px-2 h-btns">
-                    <i class="fas fa-ellipsis-v"></i>
-                </div>    
-            </div>    
-        </header>
-        <section id="search-box" class="d-flex justify-content-center">
-            <div id="search-bar" class="d-flex flex-row align-items-center my-2 rounded-pill">
-                <div class="px-2 mx-2">
-                    <i class="fas fa-search"></i>
-                </div>
-                <input class="my-1 py-1 px-1" type="text" placeholder="Cerca o inizia una nuova chat">
-            </div>    
-        </section>
-        <section id="contact-list">
-            <div id="contact" class="d-flex flex-row"> 
-                <div id="propic" class="d-flex align-items-center px-2">
-                    <img id="contact-img" class="rounded-circle" src="img/H2A_Thel.0.jpg" alt="">
-                </div>
-                <div id="pretext" class="mx-1 py-2 w-100">
-                    <h6>Zeb</h6>
-                    <span>mhanz</span>
-                </div>
-            </div>  
-            <div id="contact" class="d-flex flex-row"> 
-                <div id="propic" class="d-flex align-items-center px-2">
-                    <img id="contact-img" class="rounded-circle" src="img/H2A_Thel.0.jpg" alt="">
-                </div>
-                <div id="pretext" class="mx-1 py-2 w-100">
-                    <h6>Zeb</h6>
-                    <span>mhanz</span>
-                </div>
-            </div>    
-        </section>
-    </nav>
-    <main id="chat">
-        <header id="chat-header" class="d-flex flex-row justify-content-between py-2">
-            <div class="d-flex flex-row align-items-center">
+    <div id="app">
+        <nav id="contacts" class="d-flex flex-column">
+            <header id="nav-header" class="d-flex flex-row py-2 justify-content-between">
                 <div class="mx-3">
-                    <img id="user-img" class="rounded-circle" src="img/H2A_Thel.0.jpg" alt=""> 
+                    <img id="user-img" class="rounded-circle" src="img/chief.jpg">
                 </div>
-                <div>
-                    <h6>Zeb</h6>
-                </div>
-            </div>
-            <div class="d-flex align-items-center mx-3">
-                <div class="mx-2 px-2 h-btns">
-                    <i  class="fas fa-search"></i>
-                </div>
-                <div class="mx-2 px-2 h-btns">
-                    <i  class="fas fa-ellipsis-v"></i>
-                </div>
-            </div>    
-        </header>
-
-        <section id="chat-box" class="d-flex flex-column clearfix px-5"> 
-            <!--CNTCT MSG-->
-            <div id="contact-message" class="mt-4 align-self-start">
-                <div class="px-3 py-1 mt-1">
-                    <span>Assumenda, placeat.</span>
-                </div>
-                <div class="px-3 py-1 mt-1">
-                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur labore error repudiandae, distinctio pariatur nihil ex, blanditiis sunt debitis quam id ipsum inventore ea magnam corporis impedit rerum? Assumenda, placeat.</span>
-                </div>
-            </div>
-            <!--USR MSG-->
-            <div id="user-message" class="align-self-end">
-                <div class="px-3 py-1 mt-1">
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor soluta iure vel error voluptatum tempore distinctio mollitia expedita quia fugiat incidunt quasi commodi cum eveniet delectus, eius doloremque labore minus.</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="message-box">
-            <div class="d-flex flex-row align-items-center">
-                <div class="mx-3 d-flex flex-row align-items-center">
-                    <div class="mx-1 px-1 h-btns">
-                        <i class="fas fa-smile"></i>
+                <div class="d-flex flex-row justify-content-around align-items-center mx-4">  
+                    <div class="mx-2 px-2 h-btns">    
+                        <i class="fas fa-circle-notch"></i>              
+                    </div>    
+                    <div class="mx-2 px-2 h-btns">
+                        <i class="far fa-comment-alt"></i>     
+                    </div>           
+                    <div class="mx-2 px-2 h-btns">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>    
+                </div>    
+            </header>
+            <section id="search-box" class="d-flex justify-content-center">
+                <div id="search-bar" class="d-flex flex-row align-items-center my-2 rounded-pill">
+                    <div class="px-2 mx-2">
+                        <i class="fas fa-search"></i>
                     </div>
-                    <div class="mx-1 px-1 h-btns">
-                        <i class="fas fa-paperclip"></i>
+                    <input class="my-1 py-1 px-1" type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>    
+            </section>
+            <section id="contact-list">
+                <div id="contact" v-for="(element, index) in contacts" class="d-flex flex-row"> 
+                    <div id="propic" class="d-flex align-items-center px-2">
+                        <img id="contact-img" class="rounded-circle" v-bind:src="element.avatar" alt="">
+                    </div>
+                    <div id="pretext" class="mx-1 py-2 w-100">
+                        <h6>{{element.name}}</h6>
+                        <span>lorem</span>
+                    </div>
+                </div>  
+            
+            </section>
+        </nav>
+        <main id="chat">
+            <header id="chat-header" class="d-flex flex-row justify-content-between py-2">
+                <div class="d-flex flex-row align-items-center">
+                    <div class="mx-3">
+                        <img id="user-img" class="rounded-circle" src="img/arbiter.jpg" alt=""> 
+                    </div>
+                    <div>
+                        <h6>Arbiter</h6>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mx-3">
+                    <div class="mx-2 px-2 h-btns">
+                        <i  class="fas fa-search"></i>
+                    </div>
+                    <div class="mx-2 px-2 h-btns">
+                        <i  class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>    
-                <div id="message-input" class="rounded-pill my-2 px-3 bg-white w-100">
-                    <input type="text" class="my-1 py-1 px-1 w-100" placeholder="Scrivi un messaggio" name="" id="">
+            </header>
+
+            <section id="chat-box" class="d-flex flex-column clearfix px-5"> 
+                <!--CNTCT MSG-->
+                <div id="contact-message" class="mt-4 align-self-start">
+                    <div class="px-3 py-1 mt-1">
+                        <span>Assumenda, placeat.</span>
+                    </div>
+                    <div class="px-3 py-1 mt-1">
+                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur labore error repudiandae, distinctio pariatur nihil ex, blanditiis sunt debitis quam id ipsum inventore ea magnam corporis impedit rerum? Assumenda, placeat.</span>
+                    </div>
                 </div>
-                <div class="mx-3 px-1 h-btns">
-                    <i id="send" class="fas fa-paper-plane"></i>
+                <!--USR MSG-->
+                <div id="user-message" class="align-self-end">
+                    <div class="px-3 py-1 mt-1">
+                        <span>Magister arte decochlearia</span>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+
+            <section id="message-box">
+                <div class="d-flex flex-row align-items-center">
+                    <div class="mx-3 d-flex flex-row align-items-center">
+                        <div class="mx-1 px-1 h-btns">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="mx-1 px-1 h-btns">
+                            <i class="fas fa-paperclip"></i>
+                        </div>
+                    </div>    
+                    <div id="message-input" class="rounded-pill my-2 px-3 bg-white w-100">
+                        <input type="text" class="my-1 py-1 px-1 w-100" placeholder="Scrivi un messaggio" name="" id="">
+                    </div>
+                    <div class="mx-3 px-1 h-btns">
+                        <i id="send" class="fas fa-paper-plane"></i>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>   
+    <script src="main.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
