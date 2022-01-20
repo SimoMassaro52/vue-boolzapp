@@ -27,11 +27,13 @@ let app = new Vue({
     el: '#app',
     data:{
         userMsg: '',
+        searchElement: '',
         currentConvo: 0,
         contacts:[
             {
                 name: 'Arbiter',
                 avatar: 'img/arbiter.jpg',
+                active: true,
                 messages:[
                     {
                         text: 'wart wart wart',
@@ -50,6 +52,7 @@ let app = new Vue({
             {
                 name: 'R.O.B.',
                 avatar: 'img/rob.jpg',
+                active: true,
                 messages:[
                     {
                         text: 'Bro stop texting my girlfriend or I will beat you',
@@ -60,6 +63,7 @@ let app = new Vue({
             {
                 name: 'Samus',
                 avatar: 'img/samus.jpg',
+                active: true,
                 messages: [
                     {
                         text: 'Why do you keep harrassing me on Insta??',
@@ -74,6 +78,7 @@ let app = new Vue({
             {
                 name: 'Cortana',
                 avatar: 'img/cortana.png',
+                active: true,
                 messages:[
                     {
                         text: 'Hey big boy ',
@@ -113,6 +118,15 @@ let app = new Vue({
                     }
                 )
             }, 1000);    
+        },
+        searchContact: function(){
+            this.contacts.forEach(element => {
+                if(element.name.toLowerCase().includes(this.searchElement)){
+                    element.active = true;
+                }else{
+                    element.active = false;
+                }
+            });
         }
     }
 })

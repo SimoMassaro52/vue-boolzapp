@@ -142,7 +142,7 @@ main{
 
 .recieved{
     width: fit-content;
-    max-width: 80%;
+    max-width: 70%;
     background-color: white;
     border-radius: 10px;    
     width: fit-content;
@@ -154,7 +154,7 @@ main{
 
 .sent{
     width: fit-content;
-    max-width: 80%;
+    max-width: 70%;
     background-color: #DCF8C6;
     border-radius: 10px;
     word-break: break-word;
@@ -162,3 +162,6 @@ main{
     align-self: flex-end;
 }
 
+.hidden{
+    display: none !important;
+}
