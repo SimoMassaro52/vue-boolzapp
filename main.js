@@ -144,16 +144,18 @@ let app = new Vue({
                         status: 'sent'
                     }
                 )
-            }
-            this.userMsg='';
-            setTimeout(()=> {
-                this.contacts[currentConvo].messages.push(
-                    {
-                        text: 'ok',
-                        status: 'received'
-                    }
-                )   
-            }, 1000);   
+                this.userMsg='';
+                setTimeout(()=> {
+                    this.contacts[currentConvo].messages.push(
+                        {
+                            text: 'ok',
+                            status: 'received'
+                        }
+                    )   
+                }, 1000); 
+            }else{
+                return
+            }     
         },
         searchContact: function(){
             this.contacts.forEach(element => {
