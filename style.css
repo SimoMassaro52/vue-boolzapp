@@ -8,6 +8,12 @@ h6{
     margin-bottom: 0 !important;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+    z-index: 3;
+}
+
 /* body *{
     border: 1px solid black;
 } */
@@ -75,6 +81,10 @@ input:focus{
 
 #propic{
     cursor: pointer;
+}
+
+#contact{
+    min-height: 66px;
 }
 
 #contact-img{
@@ -146,6 +156,7 @@ main{
     background-color: white;
     border-radius: 10px;    
     width: fit-content;
+    padding-right: 30px;
 }
 
 
@@ -164,4 +175,61 @@ main{
 
 .hidden{
     display: none !important;
+}
+
+/*Dropdown menu*/
+
+.received > #menu-ind{
+    position: relative;
+    right: 0;
+    cursor: pointer;
+    color: white;
+}
+
+.sent > #menu-ind{
+    position: relative;
+    right: 0;
+    cursor: pointer;
+    color: #DCF8C6;
+}
+
+#message{
+    position: relative;
+}
+
+#message:hover > #menu-ind{
+    color: #51585C;
+}
+
+#dropdown-menu > a{
+    display: block;
+    padding: 10px 20px;
+}
+
+#dropdown-menu{
+    position: absolute;
+    top: 25px;
+    z-index: 2;
+    width: max-content;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 0;
+    box-shadow: 1px 1px 2px 0px #000000;
+}
+
+.received > #dropdown-menu{
+    right: -140px;
+}
+
+.sent > #dropdown-menu{
+    right: 20px;
+}
+
+.visible{
+    display: block !important;
+}
+
+#dropdown-menu a:hover{
+    background-color: #CDCDCD;
+    color: black;
 }

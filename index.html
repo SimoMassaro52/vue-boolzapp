@@ -13,8 +13,9 @@
     <div id="app">
         <!--SIDE MENU-->
         <nav id="contacts" class="d-flex flex-column">
-            <!---->
+            <!--NAV HEADER-->
             <header id="nav-header" class="d-flex flex-row py-2 justify-content-between">
+                <!--User avatar-->
                 <div class="mx-3">
                     <img id="user-img" class="rounded-circle" src="img/chief.jpg">
                 </div>
@@ -30,7 +31,7 @@
                     </div>    
                 </div>    
             </header>
-            <!--Ricerca contatti-->
+            <!--CONTACT SEARCH BAR-->
             <section id="search-box" class="d-flex justify-content-center">
                 <div id="search-bar" class="d-flex flex-row align-items-center my-2 rounded-pill">
                     <div class="px-2 mx-2">
@@ -39,20 +40,23 @@
                     <input @keyup="searchContact" v-model="searchElement" class="my-1 py-1 px-1" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>    
             </section>
+            <!--CONTACTS LIST-->
             <section id="contact-list">
                 <!--V-for contatti + click per cambiare convo-->
                 <div id="contact" @click="showConvo(index)" :class="{hidden: !element.active}" v-for="(element, index) in contacts" class="d-flex flex-row"> 
-                    <!--Contatto-->
+                    <!--Contatto singolo-->
                     <div id="propic" class="d-flex align-items-center px-2">
                         <img id="contact-img" class="rounded-circle" v-bind:src="element.avatar" alt="">
                     </div>
                     <div id="pretext" class="mx-1 py-2 w-100">
                         <h6>{{element.name}}</h6>
-                        <span>{{element.messages.at(-1).text}}</span>
+                        <!--if no messages are displayed, don't show the last message log-->
+                        <span v-if="element.messages.length > 0">{{element.messages.at(-1).text}}</span>
                     </div>
                 </div>  
             </section>
         </nav>
+        <!--CHAT BOX-->
         <main id="chat">
             <!--Sezione dati contatto-->
             <header id="chat-header" class="d-flex flex-row justify-content-between py-2">
@@ -79,16 +83,17 @@
             <!--Sezione chat-->
             <section id="chat-box" class="d-flex flex-column pt-3 px-5"> 
             
-                <!--CONTACT MSG-->
-                <div v-for="(element, index, array) in contacts[currentConvo].messages" :class=`${element.status}` class="px-2 py-1 mt-1 contact-message">
+                <!--MESSAGE FEED-->
+                <div id="message" v-for="(element, index, array) in contacts[currentConvo].messages" :class=`${element.status}` class="d-flex px-2 py-1 mt-1 contact-message">
                     <!--Stampiamo il testo dell'elemento-->
                     <span>{{element.text}}</span>
+                    <!--Menu indicator-->
+                    <i @click="messageToggle(index)"  @dbclick="element.angle = !element.angle" id="menu-ind" class="px-1 fas fa-angle-down"></i>
+                    <div id="dropdown-menu"  class="hidden" :class="{visible: currentMsg == index}">
+                        <a href="#" @click="deleteMsg(index)">Cancella messaggio</a>
+                        <a href="#">Info messaggio</a>
+                    </div>
                 </div>
-                
-                <!--USER MSG-->
-                <!-- <div v-for="(element, index, array) in contacts[currentConvo].messages" class="mt-1 user-message align-self-end "> 
-                    <span v-if="element.text != ''" class="d-flex flex-wrap px-2 py-1">{{element.text}}</span>
-                </div> -->
             </section>
             <!--Sezione d'invio messaggio-->
             <section id="message-box">

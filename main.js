@@ -65,6 +65,7 @@ let app = new Vue({
         userMsg: '',
         searchElement: '',
         currentConvo: 0,
+        currentMsg: -1,
         contacts:[
             {
                 name: 'Arbiter',
@@ -73,15 +74,18 @@ let app = new Vue({
                 messages:[
                     {
                         text: 'wart wart wart',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     },
                     {
                         text: 'Demon! How many have died by your hand?',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     },
                     {
                         text: 'We have to start accounting for your casualties on our paybooks, stop dodging our calls to court!',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     }
                 ]
             },
@@ -92,7 +96,8 @@ let app = new Vue({
                 messages:[
                     {
                         text: 'Bro stop texting my girlfriend or I will beat you',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     }
                 ]
             },
@@ -103,11 +108,13 @@ let app = new Vue({
                 messages: [
                     {
                         text: 'Why do you keep harrassing me on Insta??',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     },
                     {
                         text: 'You are kind of hot but It could never work between us',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     }
                 ]
             },
@@ -118,15 +125,18 @@ let app = new Vue({
                 messages:[
                     {
                         text: 'Hey big boy ',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     },
                     {
                         text:'If you cannot show up to our appointments, you could at least let me know',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     },
                     {
                         text: 'Dont make a girl a promise, if you know you cant keep it',
-                        status: 'received'
+                        status: 'received',
+                        angle: false
                     }
                 ]
             }
@@ -159,12 +169,18 @@ let app = new Vue({
         },
         searchContact: function(){
             this.contacts.forEach(element => {
-                if(element.name.toLowerCase().includes(this.searchElement)){
+                if(element.name.toLowerCase().includes(this.searchElement.toLowerCase())){
                     element.active = true;
                 }else{
                     element.active = false;
                 }
             });
+        },
+        deleteMsg: function(index){
+            this.contacts[this.currentConvo].messages.splice(index, 1);
+        },
+        messageToggle: function(index){
+            this.currentMsg = index; 
         }
     }
 })
